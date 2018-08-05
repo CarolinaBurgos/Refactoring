@@ -13,19 +13,15 @@ public class Phone {
         this.unformattedNumber = unformattedNumber;
     }
 
-    private String getAreaCode() {
+    public String getAreaCode() {
         return unformattedNumber.substring(0, 3);
     }
 
-    private String getPrefix() {
+    public String getPrefix() {
         return unformattedNumber.substring(3, 6);
     }
 
-    private String getNumber() {
+    public String getNumber() {
         return unformattedNumber.substring(6, 10);
-    }
-
-    public String toFormattedString() {
-        return "(" + getAreaCode() + ") " + getPrefix() + "-" + getNumber();
     }
 }
