@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package obsesionprimitiva;
+package Correcto;
 
-/**
- *
- * @author Carolina
- */
-public class ObsesionPrimitiva {
 
-    /**
-     * @param args the command line arguments
-     */
+public class Correcto {
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        Producto p = new Producto();
+        p.setId(new ProductoID("4562113@"));
+        
+        ProductoID pID = p.getId();
+        System.out.println("¿El ID es valido? " + pID.isValid());
     }
     
 }
