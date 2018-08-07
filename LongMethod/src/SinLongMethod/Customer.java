@@ -37,7 +37,7 @@ public class Customer {
         int frequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
-        rental(frequentRenterPoints, result, rentals, totalAmount);
+        rental(frequentRenterPoints, result, rentals, totalAmount); //Metodo que reduce las lineas de codigo de statement
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         return result;
@@ -46,8 +46,8 @@ public class Customer {
     public void rental(int frequentRenterPoints, String result, Enumeration rentals, double totalAmount) {
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            double thisAmount = amountFor(each);
-            frequentRenterPoints = frequentRenter(frequentRenterPoints, each);            
+            double thisAmount = amountFor(each); 
+            frequentRenterPoints = frequentRenter(frequentRenterPoints, each); //Metodo que reduce las lineas de codigo de rental         
             result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
@@ -70,13 +70,13 @@ public class Customer {
         double result = 0;
         switch (aRental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                result = getChargeRegular(aRental, result);
+                result = getChargeRegular(aRental, result); //Metodo que reduce las lineas de codigo de getCharge
                 break;
             case Movie.NEW_RELEASE:
                 result += aRental.getDaysRented() * 3;
                 break;
             case Movie.CHILDRENS:
-                result = getChargeChildrens(aRental, result);
+                result = getChargeChildrens(aRental, result); //Metodo que reduce las lineas de codigo de getCharge
                 break;
         }
         return result;

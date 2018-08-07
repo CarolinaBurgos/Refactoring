@@ -10,12 +10,15 @@ package ConLargeClass;
  * @author Carolina
  */
 public class CarritoDeCompra {
-     
+    
     private double subtotal;
     private double iva;
     private double total;
     
-    private Articulo articulo;
+    private String id_articulo;
+    private String articulo;
+    private int precio_articulo;
+    private int cantidad_articulo;
 
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
@@ -27,11 +30,47 @@ public class CarritoDeCompra {
 
     public void setTotal(double total) {
         this.total = total;
-    }   
+    }
     
-    public void agregarAlCarrito() {
-                
-        this.subtotal = this.subtotal + (articulo.getCantidad() * articulo.getPrecio_articulo());
+    public String getId_articulo() {
+        return id_articulo;
+    }
+
+    public void setId_articulo(String id_articulo) {
+        this.id_articulo = id_articulo;
+    }
+
+    public String getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(String articulo) {
+        this.articulo = articulo;
+    }
+
+    public int getCantidad() {
+        return cantidad_articulo;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad_articulo = cantidad;
+    }
+    
+    public void agregarAlCarritoPorID(String id_articulo, int cantidad){
+        
+        this.id_articulo = id_articulo;
+        this.cantidad_articulo = cantidad;
+        
+        this.subtotal = this.subtotal + (cantidad * this.precio_articulo);
+        
+    }
+    
+    public void agregarAlCarritoPorNombre(String articulo, int cantidad){
+        
+        this.articulo = articulo;
+        this.cantidad_articulo = cantidad;
+        
+        this.subtotal = this.subtotal + (cantidad * this.precio_articulo);
         
     }
     

@@ -32,6 +32,7 @@ public class Customer {
         return _name;
     }
 
+    //Metodo supera 10 lineas de codigo
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
@@ -67,6 +68,7 @@ public class Customer {
         return getCharge(aRental);
     }
 
+    //Metodo supera 10 lineas de codigo
     public double getCharge(Rental aRental) {
         double result = 0;
         switch (aRental.getMovie().getPriceCode()) {
